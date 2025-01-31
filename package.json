@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongodb": "^6.12.0",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "cse341-contacts",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {
+    "mocha": "^2.5.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/7pigy7/CSE341-Contacts.git"
+  },
+  "author": "Jessica Henry",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/7pigy7/CSE341-Contacts/issues"
+  },
+  "homepage": "https://github.com/7pigy7/CSE341-Contacts#readme",
+  "description": ""
+}
