@@ -22,7 +22,7 @@ const saveAuthor = (req, res, next) => {
 
 const saveBook = (req, res, next) => {
     const validationRule = {
-      Title: 'required|string',
+      title: 'required|string',
       authorId: 'required|string',
       publishYear: 'string',
       category: 'string'
