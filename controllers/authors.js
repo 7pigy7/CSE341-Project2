@@ -26,7 +26,7 @@ const getSingle = async (req, res) => {
 const createauthor = async (req, res) => {
     //#swagger-tags['authors']
     const author = {
-        fistName: req.body.firstName,
+        firstName: req.body.firstName,
         lastName: req.body.lastName,
         email: req.body.email,
         birthday: req.body.birthday
