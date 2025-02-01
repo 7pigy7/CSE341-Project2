@@ -46,7 +46,7 @@ const updateauthor = async (req, res) => {
       }
     const authorId = new ObjectId(req.params.id);
     const author = {
-        fistName: req.body.firstName,
+        firstName: req.body.firstName,
         lastName: req.body.lastName,
         email: req.body.email,
         birthday: req.body.birthday
