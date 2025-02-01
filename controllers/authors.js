@@ -12,6 +12,9 @@ const getAll = async (req, res) => {
 
 const getSingle = async (req, res) => {
     //#swagger-tags['authors']
+    if (!ObjectId.isValid(req.params.id)) {
+        res.status(400).json('Must use a valid author id to find a author.');
+      }
     const authorId = new ObjectId(req.params.id);
     const result = await mongodb.getDatabase().db('project2').collection('authors').find({_id: authosId });
     result.toArray().then((authors) => {
@@ -28,7 +31,7 @@ const createauthor = async (req, res) => {
         email: req.body.email,
         birthday: req.body.birthday
     };
-    const response = await mongodb.getDatabase().db('project2').collection('authors').add(author);
+    const response = await mongodb.getDatabase().db('project2').collection('authors').insertOne(author);
     if (response.acknowledged) {
         res.status(204).send();
     } else {
@@ -38,6 +41,9 @@ const createauthor = async (req, res) => {
 
 const updateauthor = async (req, res) => {
     //#swagger-tags['authors']
+    if (!ObjectId.isValid(req.params.id)) {
+        res.status(400).json('Must use a valid author id to update a author.');
+      }
     const authorId = new ObjectId(req.params.id);
     const author = {
         fistName: req.body.firstName,
@@ -55,6 +61,9 @@ const updateauthor = async (req, res) => {
 
 const deleteauthor = async (req, res) => {
     //#swagger-tags['authors']
+    if (!ObjectId.isValid(req.params.id)) {
+        res.status(400).json('Must use a valid author id to delete a author.');
+      }
     const authorId = new ObjectId(req.params.id);
     const response = await mongodb.getDatabase().db('project2').collection('authors').deleteOne({_id: authorId});
     if (response.deletedCount > 0) {
