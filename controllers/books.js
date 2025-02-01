@@ -31,7 +31,7 @@ const createbook = async (req, res) => {
         publishedYear: req.body.publishedYear,
         category: req.body.category
     };
-    const response = await mongodb.getDatabase().db('project2').collection('books').add(book);
+    const response = await mongodb.getDatabase().db('project2').collection('books').insertOne(book);
     if (response.acknowledged) {
         res.status(204).send();
     } else {
