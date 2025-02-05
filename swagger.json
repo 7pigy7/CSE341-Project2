@@ -63,9 +63,6 @@
                 },
                 "publishedYear": {
                   "example": "any"
-                },
-                "category": {
-                  "example": "any"
                 }
               }
             }
@@ -129,9 +126,6 @@
                   "example": "any"
                 },
                 "publishedYear": {
-                  "example": "any"
-                },
-                "category": {
                   "example": "any"
                 }
               }

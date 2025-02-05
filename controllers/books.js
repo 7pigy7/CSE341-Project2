@@ -27,9 +27,11 @@ const createbook = async (req, res) => {
     //#swagger-tags['books']
     const book = {
         title: req.body.title,
+        series: body.series,
         authorId: req.body.authorId,
         publishedYear: req.body.publishedYear,
-        category: req.body.category
+        category: body.category,
+        rating: body.rating
     };
     const response = await mongodb.getDatabase().db('project2').collection('books').insertOne(book);
     if (response.acknowledged) {
@@ -47,9 +49,11 @@ const updatebook = async (req, res) => {
     const bookId = new ObjectId(req.params.id);
     const book = {
         title: req.body.title,
+        series: body.series,
         authorId: req.body.authorId,
         publishedYear: req.body.publishedYear,
-        category: req.body.category
+        category: body.category,
+        rating: body.rating
     };
     const response = await mongodb.getDatabase().db('project2').collection('books').modifyOne({_id: bookId}, book);
     if (response.modifiedCount > 0) {
