@@ -3,6 +3,7 @@ const router = express.Router();
 
 const authorsController = require('../controllers/authors');
 const validation = require('../middleware/validate');
+const { isAuthenticated } = require("../middleware/authenticate");
 
 router.get('/', authorsController.getAll);
 
@@ -12,6 +13,6 @@ router.post('/', validation.saveAuthor, authorsController.createauthor);
 
 router.put('/:id', validation.saveAuthor, authorsController.updateauthor);
 
-router.delete('/:id', authorsController.deleteauthor);
+router.delete('/:id', isAuthenticated, authorsController.deleteauthor);
 
 module.exports = router;
