@@ -16,7 +16,7 @@ const getSingle = async (req, res) => {
         res.status(400).json('Must use a valid author id to find a author.');
       }
     const authorId = new ObjectId(req.params.id);
-    const result = await mongodb.getDatabase().db('project2').collection('authors').find({_id: authosId });
+    const result = await mongodb.getDatabase().db('project2').collection('authors').find({_id: authorsId });
     result.toArray().then((authors) => {
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(authors[0]);
