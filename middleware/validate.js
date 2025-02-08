@@ -23,9 +23,11 @@ const saveAuthor = (req, res, next) => {
 const saveBook = (req, res, next) => {
     const validationRule = {
       title: 'required|string',
+      series: 'string',
       authorId: 'required|string',
       publishYear: 'string',
-      category: 'string'
+      category: 'string',
+      rateing: 'string'
     };
     validator(req.body, validationRule, {}, (err, status) => {
       if (!status) {
